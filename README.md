@@ -38,3 +38,4 @@ After having worked through the preparatory materials, you will then practice th
 
 ## Funding
 The Machine Learning Laboratory was supported by the German Federal Ministry of Education and Research (BMBF, Funding number: 01IS17072)
+![BMBF_Logo](./BMBF_Logo.svg)
