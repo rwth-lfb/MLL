@@ -35,3 +35,6 @@ After having worked through the preparatory materials, you will then practice th
         * You can load public notebooks directly into [Google CoLab](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=WzIRIt9d2huC)
         * Missing dependencies can also be [installed](https://colab.research.google.com/notebooks/snippets/importing_libraries.ipynb#scrollTo=GQ18Kd5F3uKe)
     * If you have sufficient GPU-acceleration, i.e. NVIDIA with 6 GB of Graphics RAM, you can also [install nvidia-docker](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)) to make use of that.
+
+## Funding
+The Machine Learning Laboratory was supported by the German Federal Ministry of Education and Research (BMBF, Funding number: 01IS17072)
