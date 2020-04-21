@@ -18,9 +18,9 @@ import numpy as np
 cudnn.benchmark = True
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-
 def main(train_args, model):
     print(train_args)
+    dset_path = os.path.join(os.path.abspath(os.environ["HOME"]), 'datasets')
 
     net = model.to(device)
 
@@ -58,7 +58,7 @@ def main(train_args, model):
         transforms.ToTensor()
     ])
 
-    train_set = VOCSegmentation(root='./',
+    train_set = VOCSegmentation(root=dset_path,
                                 image_set='train',
                                 transform=input_transform,
                                 target_transform=train_transform)
@@ -66,7 +66,7 @@ def main(train_args, model):
                               batch_size=1,
                               num_workers=4,
                               shuffle=True)
-    val_set = VOCSegmentation(root='./',
+    val_set = VOCSegmentation(root=dset_path,
                               image_set='val',
                               transform=input_transform,
                               target_transform=train_transform)

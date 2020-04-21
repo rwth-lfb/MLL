@@ -1,13 +1,18 @@
 from six.moves import urllib
 from sklearn.preprocessing import OneHotEncoder
 import numpy as np
+import os
 
 class MNIST:
     def __init__(self):
         # Alternative method to load MNIST, if mldata.org is down
         from scipy.io import loadmat
         mnist_alternative_url = "https://github.com/amplab/datascience-sp14/raw/master/lab7/mldata/mnist-original.mat"
-        mnist_path = "./mnist-original.mat"
+        # dataset path for all datasets
+        dset_path = os.path.join(os.path.abspath(os.environ["HOME"]), 'datasets')
+        if not os.path.isdir(dset_path):
+            os.makedirs(dset_path)
+        mnist_path = os.path.join(dset_path, "mnist-original.mat")
         response = urllib.request.urlopen(mnist_alternative_url)
         with open(mnist_path, "wb") as f:
             content = response.read()
