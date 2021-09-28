@@ -24,7 +24,7 @@ class MNIST:
 
         self.data = mnist_raw["data"].T
 
-        onehot_encoder = OneHotEncoder(n_values=10, sparse=False)
+        onehot_encoder = OneHotEncoder(sparse=False)
         labels = mnist_raw["label"][0].reshape(len(mnist_raw["label"][0]), 1)
         labels = onehot_encoder.fit_transform(labels)
         
