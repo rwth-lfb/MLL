@@ -1,0 +1,6 @@
+open-clip-torch==2.24.0
+# torch==1.11.0
+lightning==1.9.4 
+matplotlib
+numpy==1.24.2
+einops
