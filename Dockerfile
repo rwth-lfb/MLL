@@ -6,4 +6,4 @@ RUN apt-get update && apt-get install -y libglib2.0-0 libsm6 libxext6 libfontcon
 USER ${NB_USER}
 
 COPY requirements.txt /srv/requirements.txt
-RUN pip install -r /srv/requirements.txt -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
+RUN pip install -r /srv/requirements.txt
