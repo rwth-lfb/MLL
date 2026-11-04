@@ -1,0 +1,44 @@
+# Requirements for MLL notebooks 1-9 -- CPU-only variant of requirements.txt
+# torch is pinned to 2.3.0 because torchtext (Session 8) is discontinued and its
+# last release (0.18.0) only works with torch 2.3.0. numpy must stay < 2.
+
+# PyTorch CPU-only build (no GPU / CUDA needed).
+# The torch wheels are pulled via --find-links instead of --extra-index-url:
+# the PyTorch CPU index also hosts old copies of torchmetrics, setuptools,
+# numpy, ... and uv (default index strategy) would then refuse the PyPI versions.
+--find-links https://download.pytorch.org/whl/cpu/torch/
+--find-links https://download.pytorch.org/whl/cpu/torchvision/
+--find-links https://download.pytorch.org/whl/cpu/torchtext/
+torch==2.3.0+cpu
+torchvision==0.18.0+cpu
+torchtext==0.18.0                 # S8
+
+# Scientific stack
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.3                     # S1 (seaborn datasets)
+matplotlib==3.9.2
+seaborn==0.13.2                   # S1
+scikit-learn==1.5.2               # S1, S3
+scikit-image==0.24.0              # S2
+opencv-python-headless==4.10.0.84 # S1 (4.11+ requires numpy >= 2)
+pillow==10.4.0                    # S5, S9
+six==1.16.0                       # S3
+tqdm==4.66.5
+
+# Deep learning extras
+torchmetrics==1.4.3               # S2
+diffusers==0.31.0                 # S7
+jiwer==3.0.4                      # S8
+lightning==2.3.3                  # S9
+setuptools==75.8.0                # lightning imports pkg_resources (removed in newer setuptools)
+open-clip-torch==2.24.0           # S9
+einops==0.8.0                     # S9
+
+# NLP (S8): spaCy + language models used by the tokenizers
+spacy==3.7.5
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+de_core_news_sm @ https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.7.0/de_core_news_sm-3.7.0-py3-none-any.whl
+
+# Jupyter kernel 
+ipykernel

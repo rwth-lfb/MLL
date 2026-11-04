@@ -16,7 +16,7 @@ class MVTecDataModule(pl.LightningDataModule):
 
     def __init__(
         self,
-        data_dir: str = "./Mvtec_AD",
+        data_dir: str = "/home/jovyan/datasets/Mvtec_AD",
         class_name: str = "wood",
         batch_size: int = 1,
         seed=42,
